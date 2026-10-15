@@ -1,0 +1,17 @@
+{
+  "name": "astro-skill-scripts",
+  "version": "1.0.0",
+  "description": "Scripts for the astro skill — Vedic chart computation and rendering",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "compute": "node generate-chart.mjs",
+    "render": "node render-chart.mjs"
+  },
+  "dependencies": {
+    "swisseph-wasm": "^0.0.5"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

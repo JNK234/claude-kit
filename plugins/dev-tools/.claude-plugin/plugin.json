@@ -1,0 +1,6 @@
+{
+  "name": "dev-tools",
+  "version": "0.1.0",
+  "description": "GitHub ops, timed take-home support, plan/implement/spec commands, coder and blind-tester agents.",
+  "author": { "name": "JNK234" }
+}

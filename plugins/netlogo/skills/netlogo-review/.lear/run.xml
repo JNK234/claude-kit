@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<!DOCTYPE experiments SYSTEM "behaviorspace.dtd">
+<experiments><experiment name="t" repetitions="1" runMetricsEveryStep="false">
+<setup>test-all</setup><go></go><timeLimit steps="0"/><metric>0</metric></experiment></experiments>

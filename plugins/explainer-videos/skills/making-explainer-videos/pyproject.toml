@@ -1,0 +1,13 @@
+[project]
+name = "making-explainer-videos"
+version = "0.1.0"
+description = "Narrated 3Blue1Brown-style explainer videos from a content spec"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "manim>=0.19",
+    "pyyaml>=6",
+    "pillow>=10",
+    "matplotlib>=3.11.2",
+    "kokoro-onnx>=0.6.1",
+    "soundfile>=0.14.0",
+]

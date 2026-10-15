@@ -1,0 +1,24 @@
+title: Why pass/fail scores stop working
+slug: passfail-test
+scenes:
+  - id: tie
+    narration: >
+      Three agents play the same game. All three reach the first badge.
+      A pass or fail score says that the three agents are equal.
+    visual: >
+      Three labeled agent icons (Agent A, Agent B, Agent C). Each moves to a
+      finish flag. Each gets a green check mark. Show the text "Score: 3 / 3 pass".
+  - id: frames
+    narration: >
+      Now count the frames that each agent uses. Agent A uses 160 thousand.
+      Agent B uses 283 thousand. Agent C uses 477 thousand. A human expert uses 40 thousand.
+      The frame count shows the difference that the pass score hides.
+    visual: >
+      Horizontal bar chart that grows bar by bar as each number is said:
+      Agent A 160k, Agent B 283k, Agent C 477k. Then a dashed line for
+      "Human 40k". Highlight the gap between the human line and the shortest bar.
+    data:
+      Agent A: 160021
+      Agent B: 283474
+      Agent C: 477140
+      Human: 40435

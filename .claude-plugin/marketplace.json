@@ -1,0 +1,41 @@
+{
+  "name": "claude-kit",
+  "owner": {
+    "name": "JNK234"
+  },
+  "metadata": {
+    "description": "Claude Code skills, commands, agents and workflows for research, writing, NetLogo and dev work."
+  },
+  "plugins": [
+    {
+      "name": "dev-tools",
+      "source": "./plugins/dev-tools",
+      "description": "GitHub ops, timed take-home support, plan/implement/spec commands, coder and blind-tester agents."
+    },
+    {
+      "name": "explainer-videos",
+      "source": "./plugins/explainer-videos",
+      "description": "Narrated 3Blue1Brown-style explainer videos with Manim and ElevenLabs or macOS say."
+    },
+    {
+      "name": "life",
+      "source": "./plugins/life",
+      "description": "Vedic astrology charts and PDF invoice generation."
+    },
+    {
+      "name": "netlogo",
+      "source": "./plugins/netlogo",
+      "description": "NetLogo extension dev, .nlogox review gate, and LLM demo builder."
+    },
+    {
+      "name": "research-vault",
+      "source": "./plugins/research-vault",
+      "description": "Obsidian research pipeline: decode papers into notes, zettels, a synthesis wiki, and idea surfacing."
+    },
+    {
+      "name": "writing",
+      "source": "./plugins/writing",
+      "description": "Outreach emails to busy people, LinkedIn and X posts, research blog posts."
+    }
+  ]
+}

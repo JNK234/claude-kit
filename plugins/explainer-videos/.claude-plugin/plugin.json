@@ -1,0 +1,6 @@
+{
+  "name": "explainer-videos",
+  "version": "0.1.0",
+  "description": "Narrated 3Blue1Brown-style explainer videos with Manim and ElevenLabs or macOS say.",
+  "author": { "name": "JNK234" }
+}

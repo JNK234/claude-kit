@@ -1,0 +1,4 @@
+--- ifelse item 0 food-observations != 0 
+  [if item 1 food-observations != 0 [rt 20 fd 1] [lt 20 fd 1]]
+  [if item 2 food-observations != 0 [fd 1] [bk 1]]
+   Expected command. (offset 314)

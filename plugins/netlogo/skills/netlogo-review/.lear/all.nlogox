@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<model version="NetLogo 7.0.3" snapToGrid="true">
+  <code><![CDATA[turtles-own [ rule fitness lifetime food-collected poison-collected input food-observations poison-observations resource-observations weight ]
+to __r1
+ifelse item 0 food-observations != 0 
+  [if item 1 food-observations != 0 [rt 20 fd 1] [lt 20 fd 1]]
+  [if item 2 food-observations != 0 [fd 1] [bk 1]]
+end
+to __r2
+ifelse item 0 food-observations < item 0 poison-observations
+  [lt 20 fd 1]
+  [rt 20 fd 1]
+
+ifelse item 1 food-observations < item 1 poison-observations
+  [lt 10 fd 1]
+  [rt 10 fd 1]
+end
+to __r3
+ifelse item 0 food-observations < item 1 food-observations 
+  [ rt 20 ]
+  [ ifelse item 1 food-observations < item 2 food-observations 
+    [ lt 20 ]
+    [ fd 1 ]
+  ]
+rt 10
+end
+to __r4
+ifelse item 0 input != 0 [fd 1] [rt 90 fd 1]
+end
+to __r5
+ifelse item 0 input != 0 [fd 1] [rt 90 fd 2]
+end
+to __r6
+ifelse item 0 input != 0
+  [ fd 1 ]
+  [ ifelse item 1 input != 0
+    [ lt 20 fd 1 ]
+    [ ifelse item 2 input != 0
+      [ rt 20 fd 1 ]
+      [ lt random 20 rt random 20 fd 1 ]
+    ]
+  ]
+end
+to __r7
+ifelse item 2 food-observations < item 2 poison-observations 
+  [ fd 1 ]
+  [ ifelse item 0 food-observations < item 1 food-observations 
+      [ lt 20 fd 1 ]
+      [ rt 20 fd 1 ]
+  ]
+end
+to __r8
+ifelse random 2 < 1 
+  [lt 10 fd 1] 
+  [ifelse random 2 < 1 
+    [rt 10 fd 1] 
+    [fd 1]
+  ]
+end
+to __r9
+ifelse random 2 = 0 [ lt random 20 fd 1 ] [ rt random 20 fd 1 ]
+end
+to __r10
+ifelse random 2 = 0 [fd 1] [rt 90 fd 1]
+end
+to __r11
+ifelse random 2 = 0 [fd 1]
+[
+  ifelse random 2 = 0 [lt 10 fd 1]
+  [
+    ifelse random 2 = 0 [rt 10 fd 1]
+    [
+      lt random 20 rt random 10 fd 1
+    ]
+  ]
+]
+end
+to __r12
+ifelse random 2 = 0 [fd 1]
+[
+  ifelse random 2 = 0 [lt random 20 fd 1]
+  [
+    ifelse random 2 = 0 [rt random 20 fd 1]
+    [
+      lt random 10
+      rt random 10
+      fd 1
+    ]
+  ]
+]
+end
+to __r13
+ifelse random 2 = 0 [lt random 10 fd 1] [rt random 10 fd 1]
+end
+to __r14
+ifelse random 2 = 0 [lt random 20 fd 1] [rt random 10 fd 1]
+end
+to __r15
+ifelse random 2 = 0 [lt random 30 fd 1] [rt random 30 fd 1]
+end
+to __r16
+ifelse random 2 = 0 [rt random 30 fd 1] [lt random 30 fd 1]
+end
+to __r17
+ifelse random 2 = 0 
+  [ifelse random 2 = 0 [lt 10 fd 1] [rt 10 fd 1]]
+  [ifelse random 2 = 0 [lt random 10 fd 1] [rt random 10 fd 1]]
+end
+to __r18
+ifelse random 2 = 0 
+  [lt random 10 fd 1]
+  [ifelse random 2 = 0 
+    [rt random 10 fd 1]
+    [fd 1]
+  ]
+end
+to __r19
+ifelse random 2 = 0 
+  [lt random 10 fd 1]
+  [ifelse random 2 = 1 
+    [rt random 10 fd 1]
+    [fd 1]
+  ]
+end
+to __r20
+ifelse random 2 = 0 
+  [lt random 20 fd 1]
+  [rt random 20 fd 1]
+end
+to __r21
+ifelse random 2 = 0 
+  [lt random-float 10 fd 1]
+  [rt random-float 10 fd 1]
+end
+to __r22
+ifelse random 2 = 0 
+[ fd 1 ]
+[ ifelse random 2 = 0 
+  [ lt 10 fd 1 ]
+  [ ifelse random 2 = 0 
+    [ rt 10 fd 1 ]
+    [ lt random 20 rt random 10 fd 1 ]
+  ]
+]
+end
+to __r23
+ifelse random 2 = 0 
+[ fd 1 ]
+[ ifelse random 2 = 1 
+  [ rt 10 fd 1 ]
+  [ lt 10 fd 1 ]
+]
+end
+to __r24
+ifelse random 2 = 0 
+[rt 10 fd 1]
+[ifelse random 2 = 0 
+  [lt 5 fd 1]
+  [ifelse random 2 = 0 
+    [rt 5 fd 1]
+    [ifelse random 2 = 0 
+      [lt 10 fd 1]
+      [rt 10 fd 1]
+    ]
+  ]
+]
+end
+to __r25
+ifelse random-float 1 < 0.3 [fd 1]
+  [ifelse random-float 1 < 0.6 [rt 10 fd 1]
+    [ifelse random-float 1 < 0.9 [lt 10 fd 1]
+      [lt random-float 20 rt random-float 10 fd 1]
+    ]
+  ]
+end
+to __r26
+ifelse random-float 1 < 0.3
+  [lt random 15 fd 1]
+  [ifelse random-float 1 < 0.6
+    [rt random 10 fd 1]
+    [ifelse random-float 1 < 0.9
+      [lt random 20 fd 1]
+      [rt random 20 fd 1]]]
+end
+to __r27
+ifelse random-float 1 < 0.3
+  [lt random 15 fd 1]
+  [ifelse random-float 1 < 0.6
+    [rt random 10 fd 1]
+    [ifelse random-float 1 < 0.9
+      [lt random 5 fd 1]
+      [lt random 5 fd 1]]]
+end
+to __r28
+ifelse random-float 1 < 0.33 
+[ fd 1 ]
+[ ifelse random-float 1 < 0.5 
+  [ lt 10 fd 1 ]
+  [ ifelse random-float 1 < 0.5 
+    [ rt 10 fd 1 ]
+    [ lt random 20 rt random 10 fd 1 ]
+  ]
+]
+end
+to __r29
+ifelse random-float 1 < 0.33
+[ fd 1 ]
+[ ifelse random-float 1 < 0.5
+  [ lt 10 fd 1 ]
+  [ ifelse random-float 1 < 0.75
+    [ rt 10 fd 1 ]
+    [ lt random 20 rt random 10 fd 1 ]
+  ]
+]
+end
+to __r30
+ifelse random-float 1 < 0.33
+[fd 1]
+[ifelse random-float 1 < 0.5
+[lt random 20 fd 1]
+[ifelse random-float 1 < 0.5
+[rt random 20 fd 1]
+[lt random 20 rt random 10 fd 1]]]
+end
+to __r31
+ifelse random-float 1 < 0.4 
+  [lt random 10 fd 1]
+  [ifelse random-float 1 < 0.3 
+    [rt random 10 fd 1]
+    [fd 1]
+  ]
+end
+to __r32
+ifelse random-float 1 < 0.4
+  [lt random 10 fd 1]
+  [ifelse random-float 1 < 0.8
+    [rt random 10 fd 1]
+    [ifelse random-float 1 < 0.5
+      [lt random 10 fd 1]
+      [rt random 10 fd 1]]]
+end
+to __r33
+ifelse random-float 1 < 0.5 [fd 1] [rt 90 fd 1]
+end
+to __r34
+ifelse random-float 1 < 0.5 [fd 1] [rt 90 fd 1]
+ifelse random 2 = 0 [lt 30 fd 1] [rt 30 fd 1]
+if random-float 1 < 0.2 [lt 90 fd 1]
+end
+to __r35
+ifelse random-float 1 < 0.5 [fd 1] [rt random 20 fd 1]
+end
+to __r36
+ifelse random-float 1 < 0.5 [fd 1] [rt random 90]
+end
+to __r37
+ifelse random-float 1 < 0.5 [lt 10 fd 1] [ifelse random-float 1 < 0.5 [rt 10 fd 1] [ifelse random-float 1 < 0.7 [lt random 10 fd 1] [rt random 10 fd 1]]]
+end
+to __r38
+ifelse random-float 1 < 0.5 [lt random 11 fd 1] [rt random 11 fd 1]
+end
+to __r39
+ifelse random-float 1 < 0.5
+  [ifelse random-float 1 < 0.7
+    [lt random 10 fd 1]
+    [rt random 10 fd 1]]
+  [ifelse random-float 1 < 0.5
+    [lt 10 fd 1]
+    [rt 10 fd 1]]
+end
+to __r40
+ifelse random-float 1 < 0.5
+  [ifelse random-float 1 < 0.7
+    [lt random 10 fd 1]
+    [rt random 10 fd 1]]
+  [ifelse random-float 1 < 0.7
+    [lt random 10 fd 1]
+    [rt random 10 fd 1]]
+end
+to __r41
+ifelse random-float 1 < 0.5
+  [lt random 11 fd 1]
+  [rt random 11 fd 1]
+end
+to __r42
+ifelse random-float 360 < 180 [lt 10 fd 1] 
+[ifelse random-float 1 < 0.5 [lt random-float 20 fd 1] [rt random-float 20 fd 1]]
+end
+to __r43
+lt (random 15) rt (random 25) fd (1 + random-float 0.5)
+end
+to __r44
+lt random 20 rt random 20 fd (1 + random-float 0.5)
+end
+to __r45
+lt random 20 rt random 20 fd 1
+end
+to __r46
+lt random 20
+rt random 20
+fd 1
+end
+to __r47
+lt random-float 20 rt random-float 20 fd (1 + random-float 0.5)
+end
+to __r48
+lt random-float 20 rt random-float 20 fd random-float 1.5
+end
+to __r49
+lt random-float 20
+rt random-float 20
+fd 1
+end
+to __r50
+lt random-float 40 rt random-float 20 fd 1
+end
+to __r51
+lt random-float 40 rt random-float 20 fd random-float 1.5
+end
+]]></code>
+  <widgets><view x="0" y="0" width="200" height="200" patchSize="10.0" frameRate="30.0" minPxcor="-9" maxPxcor="9" minPycor="-9" maxPycor="9" fontSize="10" wrappingAllowedX="true" wrappingAllowedY="true" showTickCounter="true" tickCounterLabel="ticks" updateMode="1"></view></widgets>
+</model>

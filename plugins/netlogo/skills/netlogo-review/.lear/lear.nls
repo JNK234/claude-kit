@@ -1,0 +1,76 @@
+extensions [llm]
+globals [ n-bad n-total ]
+turtles-own [ rule fitness lifetime food-collected poison-collected input
+              food-observations poison-observations resource-observations weight ]
+to-report lear-rules
+  report (list
+    "ifelse item 0 food-observations != 0    [if item 1 food-observations != 0 [rt 20 fd 1] [lt 20 fd 1]]   [if item 2 food-observations != 0 [fd 1] [bk 1]]"
+    "ifelse item 0 food-observations < item 0 poison-observations   [lt 20 fd 1]   [rt 20 fd 1]  ifelse item 1 food-observations < item 1 poison-observations   [lt 10 fd 1]   [rt 10 fd 1]"
+    "ifelse item 0 food-observations < item 1 food-observations    [ rt 20 ]   [ ifelse item 1 food-observations < item 2 food-observations      [ lt 20 ]     [ fd 1 ]   ] rt 10"
+    "ifelse item 0 input != 0 [fd 1] [rt 90 fd 1]"
+    "ifelse item 0 input != 0 [fd 1] [rt 90 fd 2]"
+    "ifelse item 0 input != 0   [ fd 1 ]   [ ifelse item 1 input != 0     [ lt 20 fd 1 ]     [ ifelse item 2 input != 0       [ rt 20 fd 1 ]       [ lt random 20 rt random 20 fd 1 ]     ]   ]"
+    "ifelse item 2 food-observations < item 2 poison-observations    [ fd 1 ]   [ ifelse item 0 food-observations < item 1 food-observations        [ lt 20 fd 1 ]       [ rt 20 fd 1 ]   ]"
+    "ifelse random 2 < 1    [lt 10 fd 1]    [ifelse random 2 < 1      [rt 10 fd 1]      [fd 1]   ]"
+    "ifelse random 2 = 0 [ lt random 20 fd 1 ] [ rt random 20 fd 1 ]"
+    "ifelse random 2 = 0 [fd 1] [rt 90 fd 1]"
+    "ifelse random 2 = 0 [fd 1] [   ifelse random 2 = 0 [lt 10 fd 1]   [     ifelse random 2 = 0 [rt 10 fd 1]     [       lt random 20 rt random 10 fd 1     ]   ] ]"
+    "ifelse random 2 = 0 [fd 1] [   ifelse random 2 = 0 [lt random 20 fd 1]   [     ifelse random 2 = 0 [rt random 20 fd 1]     [       lt random 10       rt random 10       fd 1     ]   ] ]"
+    "ifelse random 2 = 0 [lt random 10 fd 1] [rt random 10 fd 1]"
+    "ifelse random 2 = 0 [lt random 20 fd 1] [rt random 10 fd 1]"
+    "ifelse random 2 = 0 [lt random 30 fd 1] [rt random 30 fd 1]"
+    "ifelse random 2 = 0 [rt random 30 fd 1] [lt random 30 fd 1]"
+    "ifelse random 2 = 0    [ifelse random 2 = 0 [lt 10 fd 1] [rt 10 fd 1]]   [ifelse random 2 = 0 [lt random 10 fd 1] [rt random 10 fd 1]]"
+    "ifelse random 2 = 0    [lt random 10 fd 1]   [ifelse random 2 = 0      [rt random 10 fd 1]     [fd 1]   ]"
+    "ifelse random 2 = 0    [lt random 10 fd 1]   [ifelse random 2 = 1      [rt random 10 fd 1]     [fd 1]   ]"
+    "ifelse random 2 = 0    [lt random 20 fd 1]   [rt random 20 fd 1]"
+    "ifelse random 2 = 0    [lt random-float 10 fd 1]   [rt random-float 10 fd 1]"
+    "ifelse random 2 = 0  [ fd 1 ] [ ifelse random 2 = 0    [ lt 10 fd 1 ]   [ ifelse random 2 = 0      [ rt 10 fd 1 ]     [ lt random 20 rt random 10 fd 1 ]   ] ]"
+    "ifelse random 2 = 0  [ fd 1 ] [ ifelse random 2 = 1    [ rt 10 fd 1 ]   [ lt 10 fd 1 ] ]"
+    "ifelse random 2 = 0  [rt 10 fd 1] [ifelse random 2 = 0    [lt 5 fd 1]   [ifelse random 2 = 0      [rt 5 fd 1]     [ifelse random 2 = 0        [lt 10 fd 1]       [rt 10 fd 1]     ]   ] ]"
+    "ifelse random-float 1 < 0.3 [fd 1]   [ifelse random-float 1 < 0.6 [rt 10 fd 1]     [ifelse random-float 1 < 0.9 [lt 10 fd 1]       [lt random-float 20 rt random-float 10 fd 1]     ]   ]"
+    "ifelse random-float 1 < 0.3   [lt random 15 fd 1]   [ifelse random-float 1 < 0.6     [rt random 10 fd 1]     [ifelse random-float 1 < 0.9       [lt random 20 fd 1]       [rt random 20 fd 1]]]"
+    "ifelse random-float 1 < 0.3   [lt random 15 fd 1]   [ifelse random-float 1 < 0.6     [rt random 10 fd 1]     [ifelse random-float 1 < 0.9       [lt random 5 fd 1]       [lt random 5 fd 1]]]"
+    "ifelse random-float 1 < 0.33  [ fd 1 ] [ ifelse random-float 1 < 0.5    [ lt 10 fd 1 ]   [ ifelse random-float 1 < 0.5      [ rt 10 fd 1 ]     [ lt random 20 rt random 10 fd 1 ]   ] ]"
+    "ifelse random-float 1 < 0.33 [ fd 1 ] [ ifelse random-float 1 < 0.5   [ lt 10 fd 1 ]   [ ifelse random-float 1 < 0.75     [ rt 10 fd 1 ]     [ lt random 20 rt random 10 fd 1 ]   ] ]"
+    "ifelse random-float 1 < 0.33 [fd 1] [ifelse random-float 1 < 0.5 [lt random 20 fd 1] [ifelse random-float 1 < 0.5 [rt random 20 fd 1] [lt random 20 rt random 10 fd 1]]]"
+    "ifelse random-float 1 < 0.4    [lt random 10 fd 1]   [ifelse random-float 1 < 0.3      [rt random 10 fd 1]     [fd 1]   ]"
+    "ifelse random-float 1 < 0.4   [lt random 10 fd 1]   [ifelse random-float 1 < 0.8     [rt random 10 fd 1]     [ifelse random-float 1 < 0.5       [lt random 10 fd 1]       [rt random 10 fd 1]]]"
+    "ifelse random-float 1 < 0.5 [fd 1] [rt 90 fd 1]"
+    "ifelse random-float 1 < 0.5 [fd 1] [rt 90 fd 1] ifelse random 2 = 0 [lt 30 fd 1] [rt 30 fd 1] if random-float 1 < 0.2 [lt 90 fd 1]"
+    "ifelse random-float 1 < 0.5 [fd 1] [rt random 20 fd 1]"
+    "ifelse random-float 1 < 0.5 [fd 1] [rt random 90]"
+    "ifelse random-float 1 < 0.5 [lt 10 fd 1] [ifelse random-float 1 < 0.5 [rt 10 fd 1] [ifelse random-float 1 < 0.7 [lt random 10 fd 1] [rt random 10 fd 1]]]"
+    "ifelse random-float 1 < 0.5 [lt random 11 fd 1] [rt random 11 fd 1]"
+    "ifelse random-float 1 < 0.5   [ifelse random-float 1 < 0.7     [lt random 10 fd 1]     [rt random 10 fd 1]]   [ifelse random-float 1 < 0.5     [lt 10 fd 1]     [rt 10 fd 1]]"
+    "ifelse random-float 1 < 0.5   [ifelse random-float 1 < 0.7     [lt random 10 fd 1]     [rt random 10 fd 1]]   [ifelse random-float 1 < 0.7     [lt random 10 fd 1]     [rt random 10 fd 1]]"
+    "ifelse random-float 1 < 0.5   [lt random 11 fd 1]   [rt random 11 fd 1]"
+    "ifelse random-float 360 < 180 [lt 10 fd 1]  [ifelse random-float 1 < 0.5 [lt random-float 20 fd 1] [rt random-float 20 fd 1]]"
+    "lt (random 15) rt (random 25) fd (1 + random-float 0.5)"
+    "lt random 20 rt random 20 fd (1 + random-float 0.5)"
+    "lt random 20 rt random 20 fd 1"
+    "lt random 20 rt random 20 fd 1"
+    "lt random-float 20 rt random-float 20 fd (1 + random-float 0.5)"
+    "lt random-float 20 rt random-float 20 fd random-float 1.5"
+    "lt random-float 20 rt random-float 20 fd 1"
+    "lt random-float 40 rt random-float 20 fd 1"
+    "lt random-float 40 rt random-float 20 fd random-float 1.5"
+  )
+end
+to test-all
+  set n-bad 0
+  set n-total 0
+  create-turtles 1
+  ask one-of turtles [
+    foreach lear-rules [ r ->
+      set n-total n-total + 1
+      let err llm:compile-error r
+      if err != "" [
+        set n-bad n-bad + 1
+        print (word "FAIL: " err)
+        print (word "  rule: " r)
+      ]
+    ]
+  ]
+  print (word "TOTAL=" n-total " INVALID=" n-bad " VALID=" (n-total - n-bad))
+end

@@ -1,0 +1,44 @@
+ifelse random 2 < 1 \n  [lt 10 fd 1] \n  [ifelse random 2 < 1 \n    [rt 10 fd 1] \n    [fd 1]\n  ]
+ifelse random 2 = 0 [ lt random 20 fd 1 ] [ rt random 20 fd 1 ]
+ifelse random 2 = 0 [fd 1] [rt 90 fd 1]
+ifelse random 2 = 0 [fd 1]\n[\n  ifelse random 2 = 0 [lt 10 fd 1]\n  [\n    ifelse random 2 = 0 [rt 10 fd 1]\n    [\n      lt random 20 rt random 10 fd 1\n    ]\n  ]\n]
+ifelse random 2 = 0 [fd 1]\n[\n  ifelse random 2 = 0 [lt random 20 fd 1]\n  [\n    ifelse random 2 = 0 [rt random 20 fd 1]\n    [\n      lt random 10\n      rt random 10\n      fd 1\n    ]\n  ]\n]
+ifelse random 2 = 0 [lt random 10 fd 1] [rt random 10 fd 1]
+ifelse random 2 = 0 [lt random 20 fd 1] [rt random 10 fd 1]
+ifelse random 2 = 0 [lt random 30 fd 1] [rt random 30 fd 1]
+ifelse random 2 = 0 [rt random 30 fd 1] [lt random 30 fd 1]
+ifelse random 2 = 0 \n  [ifelse random 2 = 0 [lt 10 fd 1] [rt 10 fd 1]]\n  [ifelse random 2 = 0 [lt random 10 fd 1] [rt random 10 fd 1]]
+ifelse random 2 = 0 \n  [lt random 10 fd 1]\n  [ifelse random 2 = 0 \n    [rt random 10 fd 1]\n    [fd 1]\n  ]
+ifelse random 2 = 0 \n  [lt random 10 fd 1]\n  [ifelse random 2 = 1 \n    [rt random 10 fd 1]\n    [fd 1]\n  ]
+ifelse random 2 = 0 \n  [lt random 20 fd 1]\n  [rt random 20 fd 1]
+ifelse random 2 = 0 \n  [lt random-float 10 fd 1]\n  [rt random-float 10 fd 1]
+ifelse random 2 = 0 \n[ fd 1 ]\n[ ifelse random 2 = 0 \n  [ lt 10 fd 1 ]\n  [ ifelse random 2 = 0 \n    [ rt 10 fd 1 ]\n    [ lt random 20 rt random 10 fd 1 ]\n  ]\n]
+ifelse random 2 = 0 \n[ fd 1 ]\n[ ifelse random 2 = 1 \n  [ rt 10 fd 1 ]\n  [ lt 10 fd 1 ]\n]
+ifelse random 2 = 0 \n[rt 10 fd 1]\n[ifelse random 2 = 0 \n  [lt 5 fd 1]\n  [ifelse random 2 = 0 \n    [rt 5 fd 1]\n    [ifelse random 2 = 0 \n      [lt 10 fd 1]\n      [rt 10 fd 1]\n    ]\n  ]\n]
+ifelse random-float 1 < 0.3 [fd 1]\n  [ifelse random-float 1 < 0.6 [rt 10 fd 1]\n    [ifelse random-float 1 < 0.9 [lt 10 fd 1]\n      [lt random-float 20 rt random-float 10 fd 1]\n    ]\n  ]
+ifelse random-float 1 < 0.3\n  [lt random 15 fd 1]\n  [ifelse random-float 1 < 0.6\n    [rt random 10 fd 1]\n    [ifelse random-float 1 < 0.9\n      [lt random 20 fd 1]\n      [rt random 20 fd 1]]]
+ifelse random-float 1 < 0.3\n  [lt random 15 fd 1]\n  [ifelse random-float 1 < 0.6\n    [rt random 10 fd 1]\n    [ifelse random-float 1 < 0.9\n      [lt random 5 fd 1]\n      [lt random 5 fd 1]]]
+ifelse random-float 1 < 0.33 \n[ fd 1 ]\n[ ifelse random-float 1 < 0.5 \n  [ lt 10 fd 1 ]\n  [ ifelse random-float 1 < 0.5 \n    [ rt 10 fd 1 ]\n    [ lt random 20 rt random 10 fd 1 ]\n  ]\n]
+ifelse random-float 1 < 0.33\n[ fd 1 ]\n[ ifelse random-float 1 < 0.5\n  [ lt 10 fd 1 ]\n  [ ifelse random-float 1 < 0.75\n    [ rt 10 fd 1 ]\n    [ lt random 20 rt random 10 fd 1 ]\n  ]\n]
+ifelse random-float 1 < 0.33\n[fd 1]\n[ifelse random-float 1 < 0.5\n[lt random 20 fd 1]\n[ifelse random-float 1 < 0.5\n[rt random 20 fd 1]\n[lt random 20 rt random 10 fd 1]]]
+ifelse random-float 1 < 0.4 \n  [lt random 10 fd 1]\n  [ifelse random-float 1 < 0.3 \n    [rt random 10 fd 1]\n    [fd 1]\n  ]
+ifelse random-float 1 < 0.4\n  [lt random 10 fd 1]\n  [ifelse random-float 1 < 0.8\n    [rt random 10 fd 1]\n    [ifelse random-float 1 < 0.5\n      [lt random 10 fd 1]\n      [rt random 10 fd 1]]]
+ifelse random-float 1 < 0.5 [fd 1] [rt 90 fd 1]
+ifelse random-float 1 < 0.5 [fd 1] [rt 90 fd 1]\nifelse random 2 = 0 [lt 30 fd 1] [rt 30 fd 1]\nif random-float 1 < 0.2 [lt 90 fd 1]
+ifelse random-float 1 < 0.5 [fd 1] [rt random 20 fd 1]
+ifelse random-float 1 < 0.5 [fd 1] [rt random 90]
+ifelse random-float 1 < 0.5 [lt 10 fd 1] [ifelse random-float 1 < 0.5 [rt 10 fd 1] [ifelse random-float 1 < 0.7 [lt random 10 fd 1] [rt random 10 fd 1]]]
+ifelse random-float 1 < 0.5 [lt random 11 fd 1] [rt random 11 fd 1]
+ifelse random-float 1 < 0.5\n  [ifelse random-float 1 < 0.7\n    [lt random 10 fd 1]\n    [rt random 10 fd 1]]\n  [ifelse random-float 1 < 0.5\n    [lt 10 fd 1]\n    [rt 10 fd 1]]
+ifelse random-float 1 < 0.5\n  [ifelse random-float 1 < 0.7\n    [lt random 10 fd 1]\n    [rt random 10 fd 1]]\n  [ifelse random-float 1 < 0.7\n    [lt random 10 fd 1]\n    [rt random 10 fd 1]]
+ifelse random-float 1 < 0.5\n  [lt random 11 fd 1]\n  [rt random 11 fd 1]
+ifelse random-float 360 < 180 [lt 10 fd 1] \n[ifelse random-float 1 < 0.5 [lt random-float 20 fd 1] [rt random-float 20 fd 1]]
+lt (random 15) rt (random 25) fd (1 + random-float 0.5)
+lt random 20 rt random 20 fd (1 + random-float 0.5)
+lt random 20 rt random 20 fd 1
+lt random 20\nrt random 20\nfd 1
+lt random-float 20 rt random-float 20 fd (1 + random-float 0.5)
+lt random-float 20 rt random-float 20 fd random-float 1.5
+lt random-float 20\nrt random-float 20\nfd 1
+lt random-float 40 rt random-float 20 fd 1
+lt random-float 40 rt random-float 20 fd random-float 1.5

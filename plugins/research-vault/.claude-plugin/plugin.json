@@ -1,0 +1,6 @@
+{
+  "name": "research-vault",
+  "version": "0.1.0",
+  "description": "Obsidian research pipeline: decode papers into notes, zettels, a synthesis wiki, and idea surfacing.",
+  "author": { "name": "JNK234" }
+}

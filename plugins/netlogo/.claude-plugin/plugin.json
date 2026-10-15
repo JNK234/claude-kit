@@ -1,0 +1,6 @@
+{
+  "name": "netlogo",
+  "version": "0.1.0",
+  "description": "NetLogo extension dev, .nlogox review gate, and LLM demo builder.",
+  "author": { "name": "JNK234" }
+}
